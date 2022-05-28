@@ -1,0 +1,36 @@
+{
+  "name": "scammers",
+  "version": "1.0.0",
+  "description": "A public tracker of scamming activity",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-winston": "^4.2.0",
+    "memory-cache": "^0.2.0",
+    "moment": "^2.29.2",
+    "redis": "^4.0.4",
+    "ssh2-sftp-client": "^8.0.0",
+    "twig-markdown": "^1.0.1",
+    "winston": "^3.6.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darioguarascio/scammers.git"
+  },
+  "keywords": [
+    "scams",
+    "truffe"
+  ],
+  "author": "Dario Guarascio",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/darioguarascio/scammers/issues"
+  },
+  "homepage": "https://github.com/darioguarascio/scammers#readme"
+}

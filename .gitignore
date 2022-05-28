@@ -4,3 +4,5 @@
 .profile
 node_modules
 vendor
+.env
+.directus.env
