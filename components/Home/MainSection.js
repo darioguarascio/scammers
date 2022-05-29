@@ -6,7 +6,7 @@ const MainSection = () => {
       <section className="py-12 md:py-24 overflow-x-hidden">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap lg:flex-nowrap">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full md:w-2/3 lg:w-1/2 ">
               <div className="py-6 lg:pr-32">
                 <div className="mb-4">
                   <h2 className="text-6xl text-[#333] mt-3 font-bolder">
@@ -88,7 +88,7 @@ const MainSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="relative w-full  lg:w-1/2 my-12 lg:my-0">
+            <div className="relative w-full md:w-1/3 lg:w-1/2 my-12 lg:my-0">
               <div className="w-full text-center font-medium text-gray-600 text-sm">
                 <div className="h-[400px] w-full block relative">
                   <Image

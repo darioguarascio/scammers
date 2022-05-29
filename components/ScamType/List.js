@@ -48,7 +48,7 @@ const List = () => {
   return (
     <div>
       <div className="container px-4 mx-auto my-3">
-        <div className="grid grid-cols-3 gap-11">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-11">
           {items.map((item) => (
             <Item key={item.id} item={item} />
           ))}
