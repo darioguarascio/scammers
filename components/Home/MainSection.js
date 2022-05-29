@@ -15,8 +15,9 @@ const MainSection = () => {
                 </div>
                 <div>
                   <p className="font-medium text-gray-800">
-                    Let's hep to reduce the victim by collectively contribute to
-                    put together piece of info to try to get an ID of a Scammer
+                    Let&apos;s hep to reduce the victim by collectively
+                    contribute to put together piece of info to try to get an ID
+                    of a Scammer
                   </p>
                 </div>
                 <div className="flex items-center my-4">
