@@ -5,7 +5,7 @@ const Navbar = () => {
         <nav className="flex items-center py-6">
           <a
             className="text-2xl font-semibold leading-none text-[#3254fe]"
-            href="#"
+            href="/"
           >
             Truffatori
           </a>

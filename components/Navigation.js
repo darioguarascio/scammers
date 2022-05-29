@@ -6,7 +6,7 @@ const Navigation = () => {
       <div className="w-full flex items-center justify-center mt-3 shadow-sm p-3">
         <ul className="flex items-center text-sm gap-7 font-medium text-gray-700">
           <li className="active-link">
-            <a href="#" className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3">
               <div className="h-5 w-5 relative">
                 <Image src={"/assets/img/home.svg"} layout="fill"></Image>
               </div>
@@ -22,7 +22,7 @@ const Navigation = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-3">
+            <a href="/scammer-list" className="flex items-center gap-3">
               <div className="h-5 w-5 relative">
                 <Image src={"/assets/img/list.svg"} layout="fill"></Image>
               </div>
