@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link rel="stylesheet" href="/output.css" />
+  </head>
+
+<body
+  x-data="
+      {
+        scrolledFromTop: false
+      }
+    "
+  x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
+  @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false">
+    <!--====== Code Block start ======-->
+
+
+    <!-- ====== Navbar Section Start -->
+    <header
+      x-data="
+        {
+          navbarOpen: false,
+        }
+      "
+      :class="scrolledFromTop ? 'fixed z-50 bg-white bg-opacity-80 shadow-sm backdrop-blur-sm' : 'absolute' "
+      class=" z-50 w-full left-0 top-0"
+    >
+      <div class="container">
+        <div class="flex -mx-4 items-center justify-between relative">
+          <div class="px-4 w-60 max-w-full">
+            <a href="javascript:void(0)" class="w-full block py-5">
+              <img
+                src="https://cdn.tailgrids.com/1.0/assets/images/logo/logo.svg"
+                alt="logo"
+                class="w-full"
+              />
+            </a>
+          </div>
+          <div class="flex px-4 justify-between items-center w-full">
+            <div>
+              <button
+                @click="navbarOpen = !navbarOpen"
+                :class="navbarOpen && 'navbarTogglerActive'"
+                id="navbarToggler"
+                class="
+                  block
+                  absolute
+                  right-4
+                  top-1/2
+                  -translate-y-1/2
+                  lg:hidden
+                  focus:ring-2
+                  ring-primary
+                  px-3
+                  py-[6px]
+                  rounded-lg
+                "
+              >
+                <span
+                  class="relative w-[30px] h-[2px] my-[6px] block bg-body-color"
+                ></span>
+                <span
+                  class="relative w-[30px] h-[2px] my-[6px] block bg-body-color"
+                ></span>
+                <span
+                  class="relative w-[30px] h-[2px] my-[6px] block bg-body-color"
+                ></span>
+              </button>
+              <nav
+                x-transition
+                :class="!navbarOpen && 'hidden'"
+                id="navbarCollapse"
+                class="
+                  absolute
+                  py-5
+                  px-6
+                  bg-white
+                  shadow
+                  rounded-lg
+                  max-w-[250px]
+                  w-full
+                  lg:max-w-full lg:w-full
+                  right-4
+                  lg:block lg:static lg:shadow-none
+                  transition-all
+                  top-full
+                "
+              >
+                <ul class="blcok lg:flex">
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="
+                        text-base
+                        font-medium
+                        text-dark
+                        hover:text-primary
+                        py-2
+                        lg:inline-flex
+                        flex
+                        lg:ml-12
+                      "
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="
+                        text-base
+                        font-medium
+                        text-dark
+                        hover:text-primary
+                        py-2
+                        lg:inline-flex
+                        flex
+                        lg:ml-12
+                      "
+                    >
+                      Payment
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="
+                        text-base
+                        font-medium
+                        text-dark
+                        hover:text-primary
+                        py-2
+                        lg:inline-flex
+                        flex
+                        lg:ml-12
+                      "
+                    >
+                      Features
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            {# <div class="sm:flex justify-end hidden pr-16 lg:pr-0">
+              <a
+                href="javascript:void(0)"
+                class="
+                  text-base
+                  font-medium
+                  text-dark
+                  hover:text-primary
+                  py-3
+                  px-7
+                "
+              >
+                Login
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="
+                  text-base
+                  font-medium
+                  text-white
+                  bg-primary
+                  rounded-lg
+                  py-3
+                  px-7
+                  hover:bg-opacity-90
+                "
+              >
+                Sign Up
+              </a>
+            </div> #}
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====== Navbar Section End -->
+
+
+
+<!-- ====== Call To Action Section Start -->
+<section class="py-20 lg:py-[120px]">
+   <div class="container">
+      <div
+         class="
+         bg-primary
+         relative
+         rounded
+         overflow-hidden
+         py-12
+         px-8
+         md:p-[70px]
+         z-10
+         "
+         >
+         <div class="flex flex-wrap items-center -mx-4">
+            <div class="w-full lg:w-1/2 px-4">
+               <span class="text-white text-base font-semibold mb-2">
+               Find Your Next Dream App
+               </span>
+               <h2
+                  class="
+                  text-white
+                  font-bold
+                  text-3xl
+                  sm:text-[38px]
+                  leading-tight
+                  mb-6
+                  sm:mb-8
+                  lg:mb-0
+                  "
+                  >
+                  Get started with <br class="hidden xs:block" />
+                  our free trial
+               </h2>
+            </div>
+            <div class="w-full lg:w-1/2 px-4">
+               <div class="flex flex-wrap lg:justify-end">
+                  <a
+                     href="javascript:void(0)"
+                     class="
+                     inline-block
+                     py-4
+                     px-6
+                     md:px-9
+                     lg:px-6
+                     xl:px-9
+                     rounded
+                     text-base
+                     font-medium
+                     bg-white bg-opacity-[15%]
+                     text-white
+                     hover:bg-opacity-100 hover:text-primary
+                     mr-4
+                     my-1
+                     transition
+                     "
+                     >
+                  Get Pro Version
+                  </a>
+                  <a
+                     href="javascript:void(0)"
+                     class="
+                     inline-block
+                     py-4
+                     px-6
+                     md:px-9
+                     lg:px-6
+                     xl:px-9
+                     rounded
+                     text-base
+                     font-medium
+                     bg-[#13C296]
+                     transition
+                     hover:bg-opacity-90
+                     text-white
+                     my-1
+                     "
+                     >
+                  Start Free Trial
+                  </a>
+               </div>
+            </div>
+         </div>
+         <div>
+            <span class="absolute top-0 left-0 z-[-1]">
+               <svg
+                  width="189"
+                  height="162"
+                  viewBox="0 0 189 162"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  >
+                  <ellipse
+                     cx="16"
+                     cy="-16.5"
+                     rx="173"
+                     ry="178.5"
+                     transform="rotate(180 16 -16.5)"
+                     fill="url(#paint0_linear)"
+                     />
+                  <defs>
+                     <linearGradient
+                        id="paint0_linear"
+                        x1="-157"
+                        y1="-107.754"
+                        x2="98.5011"
+                        y2="-106.425"
+                        gradientUnits="userSpaceOnUse"
+                        >
+                        <stop stop-color="white" stop-opacity="0.07" />
+                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                     </linearGradient>
+                  </defs>
+               </svg>
+            </span>
+            <span class="absolute bottom-0 right-0 z-[-1]">
+               <svg
+                  width="191"
+                  height="208"
+                  viewBox="0 0 191 208"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  >
+                  <ellipse
+                     cx="173"
+                     cy="178.5"
+                     rx="173"
+                     ry="178.5"
+                     fill="url(#paint0_linear)"
+                     />
+                  <defs>
+                     <linearGradient
+                        id="paint0_linear"
+                        x1="-3.27832e-05"
+                        y1="87.2457"
+                        x2="255.501"
+                        y2="88.5747"
+                        gradientUnits="userSpaceOnUse"
+                        >
+                        <stop stop-color="white" stop-opacity="0.07" />
+                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                     </linearGradient>
+                  </defs>
+               </svg>
+            </span>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- ====== Call To Action Section End -->
+
+
+
+
+
+
+
+    <!-- ====== Hero Section Start -->
+    <div class="relative pt-[120px] lg:pt-[150px] pb-[110px] bg-white">
+      <div class="container">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full lg:w-5/12 px-4">
+            <div class="hero-content">
+              <h1
+                class="
+                  text-dark
+                  font-bold
+                  text-4xl
+                  sm:text-[42px]
+                  lg:text-[40px]
+                  xl:text-[42px]
+                  leading-snug
+                  mb-3
+                "
+              >
+                Kickstart <br />
+                Startup Website <br />
+                with TailGrids.
+              </h1>
+              <p class="text-base mb-8 text-body-color max-w-[480px]">
+                With TailGrids, business and students thrive together. Business
+                can perfectly match their staffing to changing demand throughout
+                the dayed.
+              </p>
+              <ul class="flex flex-wrap items-center">
+                <li>
+                  <a
+                    href="javascript:void(0)"
+                    class="
+                      py-4
+                      px-6
+                      sm:px-10
+                      lg:px-8
+                      xl:px-10
+                      inline-flex
+                      items-center
+                      justify-center
+                      text-center text-white text-base
+                      bg-primary
+                      hover:bg-opacity-90
+                      font-normal
+                      rounded-lg
+                    "
+                  >
+                    Get Started
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="javascript:void(0)"
+                    class="
+                      py-4
+                      px-6
+                      sm:px-10
+                      lg:px-8
+                      xl:px-10
+                      inline-flex
+                      items-center
+                      justify-center
+                      text-center text-base
+                      font-normal
+                      text-body-color
+                      hover:text-primary
+                    "
+                  >
+                    <span class="mr-2">
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="11" cy="11" r="11" fill="#3056D3" />
+                        <rect
+                          x="6.90906"
+                          y="13.3636"
+                          width="8.18182"
+                          height="1.63636"
+                          fill="white"
+                        />
+                        <rect
+                          x="10.1818"
+                          y="6"
+                          width="1.63636"
+                          height="4.09091"
+                          fill="white"
+                        />
+                        <path
+                          d="M11 12.5454L13.8343 9.47726H8.16576L11 12.5454Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </span>
+                    Download App
+                  </a>
+                </li>
+              </ul>
+              <div class="clients pt-16">
+                <h6
+                  class="
+                    font-normal
+                    text-xs
+                    flex
+                    items-center
+                    text-body-color
+                    mb-2
+                  "
+                >
+                  Some Of Our Clients
+                  <span
+                    class="w-8 h-[1px] bg-body-color inline-block ml-2"
+                  ></span>
+                </h6>
+                <div class="flex items-center">
+                  <div class="w-full py-3 mr-4">
+                    <img src="https://cdn.tailgrids.com/1.0/assets/images/brands/ayroui.svg" alt="ayroui" />
+                  </div>
+                  <div class="w-full py-3 mr-4">
+                    <img
+                      src="https://cdn.tailgrids.com/1.0/assets/images/brands/graygrids.svg"
+                      alt="graygrids"
+                    />
+                  </div>
+                  <div class="w-full py-3 mr-4">
+                    <img src="https://cdn.tailgrids.com/1.0/assets/images/brands/uideck.svg" alt="uideck" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden lg:block lg:w-1/12 px-4"></div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="lg:text-right lg:ml-auto">
+              <div class="relative inline-block z-10 pt-11 lg:pt-0">
+                <img
+                  src="https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png"
+                  alt="hero"
+                  class="max-w-full lg:ml-auto"
+                />
+                <span class="absolute -left-8 -bottom-8 z-[-1]">
+                  <svg
+                    width="93"
+                    height="93"
+                    viewBox="0 0 93 93"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="2.5" cy="2.5" r="2.5" fill="#3056D3" />
+                    <circle cx="2.5" cy="24.5" r="2.5" fill="#3056D3" />
+                    <circle cx="2.5" cy="46.5" r="2.5" fill="#3056D3" />
+                    <circle cx="2.5" cy="68.5" r="2.5" fill="#3056D3" />
+                    <circle cx="2.5" cy="90.5" r="2.5" fill="#3056D3" />
+                    <circle cx="24.5" cy="2.5" r="2.5" fill="#3056D3" />
+                    <circle cx="24.5" cy="24.5" r="2.5" fill="#3056D3" />
+                    <circle cx="24.5" cy="46.5" r="2.5" fill="#3056D3" />
+                    <circle cx="24.5" cy="68.5" r="2.5" fill="#3056D3" />
+                    <circle cx="24.5" cy="90.5" r="2.5" fill="#3056D3" />
+                    <circle cx="46.5" cy="2.5" r="2.5" fill="#3056D3" />
+                    <circle cx="46.5" cy="24.5" r="2.5" fill="#3056D3" />
+                    <circle cx="46.5" cy="46.5" r="2.5" fill="#3056D3" />
+                    <circle cx="46.5" cy="68.5" r="2.5" fill="#3056D3" />
+                    <circle cx="46.5" cy="90.5" r="2.5" fill="#3056D3" />
+                    <circle cx="68.5" cy="2.5" r="2.5" fill="#3056D3" />
+                    <circle cx="68.5" cy="24.5" r="2.5" fill="#3056D3" />
+                    <circle cx="68.5" cy="46.5" r="2.5" fill="#3056D3" />
+                    <circle cx="68.5" cy="68.5" r="2.5" fill="#3056D3" />
+                    <circle cx="68.5" cy="90.5" r="2.5" fill="#3056D3" />
+                    <circle cx="90.5" cy="2.5" r="2.5" fill="#3056D3" />
+                    <circle cx="90.5" cy="24.5" r="2.5" fill="#3056D3" />
+                    <circle cx="90.5" cy="46.5" r="2.5" fill="#3056D3" />
+                    <circle cx="90.5" cy="68.5" r="2.5" fill="#3056D3" />
+                    <circle cx="90.5" cy="90.5" r="2.5" fill="#3056D3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ====== Hero Section End -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- ====== Blog Section Start -->
+<section class="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
+   <div class="container">
+      <div class="flex flex-wrap justify-center -mx-4">
+         <div class="w-full px-4">
+            <div class="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
+               <span class="font-semibold text-lg text-primary mb-2 block">
+               Our Blogs
+               </span>
+               <h2
+                  class="
+                  font-bold
+                  text-3xl
+                  sm:text-4xl
+                  md:text-[40px]
+                  text-dark
+                  mb-4
+                  "
+                  >
+                  Our Recent News
+               </h2>
+               <p class="text-base text-body-color">
+                  There are many variations of passages of Lorem Ipsum available
+                  but the majority have suffered alteration in some form.
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="flex flex-wrap -mx-4">
+         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+            <div class="max-w-[370px] mx-auto mb-10">
+               <div class="rounded overflow-hidden mb-8">
+                  <img
+                     src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-01.jpg"
+                     alt="image"
+                     class="w-full"
+                     />
+               </div>
+               <div>
+                  <span
+                     class="
+                     bg-primary
+                     rounded
+                     inline-block
+                     text-center
+                     py-1
+                     px-4
+                     text-xs
+                     leading-loose
+                     font-semibold
+                     text-white
+                     mb-5
+                     "
+                     >
+                  Dec 22, 2023
+                  </span>
+                  <h3>
+                     <a
+                        href="javascript:void(0)"
+                        class="
+                        font-semibold
+                        text-xl
+                        sm:text-2xl
+                        lg:text-xl
+                        xl:text-2xl
+                        mb-4
+                        inline-block
+                        text-dark
+                        hover:text-primary
+                        "
+                        >
+                     Meet AutoManage, the best AI management tools
+                     </a>
+                  </h3>
+                  <p class="text-base text-body-color">
+                     Lorem Ipsum is simply dummy text of the printing and
+                     typesetting industry.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+            <div class="max-w-[370px] mx-auto mb-10">
+               <div class="rounded overflow-hidden mb-8">
+                  <img
+                     src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-02.jpg"
+                     alt="image"
+                     class="w-full"
+                     />
+               </div>
+               <div>
+                  <span
+                     class="
+                     bg-primary
+                     rounded
+                     inline-block
+                     text-center
+                     py-1
+                     px-4
+                     text-xs
+                     leading-loose
+                     font-semibold
+                     text-white
+                     mb-5
+                     "
+                     >
+                  Mar 15, 2023
+                  </span>
+                  <h3>
+                     <a
+                        href="javascript:void(0)"
+                        class="
+                        font-semibold
+                        text-xl
+                        sm:text-2xl
+                        lg:text-xl
+                        xl:text-2xl
+                        mb-4
+                        inline-block
+                        text-dark
+                        hover:text-primary
+                        "
+                        >
+                     How to earn more money as a wellness coach
+                     </a>
+                  </h3>
+                  <p class="text-base text-body-color">
+                     Lorem Ipsum is simply dummy text of the printing and
+                     typesetting industry.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+            <div class="max-w-[370px] mx-auto mb-10">
+               <div class="rounded overflow-hidden mb-8">
+                  <img
+                     src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-03.jpg"
+                     alt="image"
+                     class="w-full"
+                     />
+               </div>
+               <div>
+                  <span
+                     class="
+                     bg-primary
+                     rounded
+                     inline-block
+                     text-center
+                     py-1
+                     px-4
+                     text-xs
+                     leading-loose
+                     font-semibold
+                     text-white
+                     mb-5
+                     "
+                     >
+                  Jan 05, 2023
+                  </span>
+                  <h3>
+                     <a
+                        href="javascript:void(0)"
+                        class="
+                        font-semibold
+                        text-xl
+                        sm:text-2xl
+                        lg:text-xl
+                        xl:text-2xl
+                        mb-4
+                        inline-block
+                        text-dark
+                        hover:text-primary
+                        "
+                        >
+                     The no-fuss guide to upselling and cross selling
+                     </a>
+                  </h3>
+                  <p class="text-base text-body-color">
+                     Lorem Ipsum is simply dummy text of the printing and
+                     typesetting industry.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- ====== Blog Section End -->
+    <!--====== Code Block end ======-->
+
+
+    {% include 'footer.twig' %}
+  </body>
+</html>
