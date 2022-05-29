@@ -38,7 +38,7 @@ const Navigation = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-3">
+            <a href="scam-type" className="flex items-center gap-3">
               <div className="h-5 w-5 relative">
                 <Image src={"/assets/img/type.svg"} layout="fill"></Image>
               </div>

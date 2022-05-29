@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import Blog from "./Blog";
+import Item from "./Item";
 
-const BlogList = () => {
-  const [blogs, setBlogs] = useState([]);
+const List = () => {
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setBlogs([
+    setItems([
       {
+        id: 1,
         tag: "Scams",
         title: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
         author: "Anon",
@@ -18,6 +19,7 @@ const BlogList = () => {
         link: "",
       },
       {
+        id: 2,
         tag: "Phising",
         title: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
         author: "Anon",
@@ -29,6 +31,7 @@ const BlogList = () => {
         link: "",
       },
       {
+        id: 3,
         tag: "Identity Theft",
         title: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
         author: "Anon",
@@ -46,18 +49,13 @@ const BlogList = () => {
     <div>
       <div className="container px-4 mx-auto my-3">
         <div className="grid grid-cols-3 gap-11">
-          {blogs.map((blog) => (
-            <Blog blog={blog} />
+          {items.map((item) => (
+            <Item key={item.id} item={item} />
           ))}
         </div>
-      </div>
-      <div className="flex items-center justify-center my-4">
-        <button className="bg-[#3254fe] p-3 px-5 rounded-md text-white font-bolder text-sm">
-          Load More
-        </button>
       </div>
     </div>
   );
 };
 
-export default BlogList;
+export default List;
