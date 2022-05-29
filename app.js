@@ -42,6 +42,8 @@ app.get('/', (req, res, next) => {
 });
 
 
+app.use(express.static('public'));
+
 
 app.use(function(req, res, next) {
   res.status(404);
