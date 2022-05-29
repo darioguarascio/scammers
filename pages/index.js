@@ -1,35 +1,31 @@
 import Head from "next/head";
 import Image from "next/image";
+import BlogList from "../components/Home/BlogList";
+import MainSection from "../components/Home/MainSection";
+import Navbar from "../components/Navbar";
+import Navigation from "../components/Navigation";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
     <div>
-      <div class="container px-4 mx-auto">
-        <nav class="flex items-center py-6">
-          <a
-            class="text-2xl font-semibold leading-none text-[#3254fe]"
-            href="#"
-          >
-            Truffatori
-          </a>
-          <div class="ml-auto">
-            <a
-              class="mr-2 inline-block px-6 py-3 text-sm text-blue-600 hover:text-[blue-700] font-semibold leading-none border border-[#3254fe] rounded-md"
-              href="#"
-            >
-              Log In
-            </a>
-            <a
-              class="inline-block px-6 py-3 text-sm font-semibold leading-none bg-[#3254fe] text-white rounded-md"
-              href="#"
-            >
-              Sign Up
-            </a>
+      <Navbar />
+      <Navigation />
+      <MainSection />
+      <BlogList />
+      <div className="bg-[#333] p-4 py-5">
+        <div className="container px-4 mx-auto grid grid-cols-3">
+          <div className="col-span-1">
+            <h1 className="text-xl font-bolder text-white">Truffatori</h1>
           </div>
-        </nav>
+          <div className="col-span-1 text-center">
+            <span className="text-white text-xs font-bold">
+              All Rights Reserved
+            </span>
+          </div>
+          <div className="col-span-1"></div>
+        </div>
       </div>
-      <hr />
     </div>
   );
 }

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import './fonts.css';
+
+.active-link
+{
+    font-family: bolder;
+    color: #333;
+}
+.active-tab span{
+    background-color: #1565D8;
+    color: #fff;
+}

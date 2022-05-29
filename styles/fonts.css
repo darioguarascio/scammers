@@ -1,0 +1,28 @@
+@font-face {
+    font-family: bolder;
+    src: url('/assets/fonts/OpenSans-ExtraBold.ttf');
+}
+@font-face {
+    font-family: bold;
+    src: url('/assets/fonts/OpenSans-Bold.ttf');
+}
+@font-face {
+    font-family: medium;
+    src: url('/assets/fonts/OpenSans-Medium.ttf');
+}
+@font-face {
+    font-family: normal;
+    src: url('/assets/fonts/OpenSans-Regular.ttf');
+}
+.font-bolder{
+    font-family: bolder;
+}
+.font-bold{
+    font-family: bold;
+}
+.font-medium{
+    font-family: medium;
+}
+.font-normal{
+    font-family: normal;
+}
