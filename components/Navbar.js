@@ -5,7 +5,6 @@ const Navbar = (props) => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
   const toggleMenuVisibility = () => {
-    console.log('%c toggleMenuVisibility ', 'background: red; color: #fff', mobileMenuVisible);
     setMobileMenuVisible(!mobileMenuVisible);
     props.onChangeMobileMenuVisibility(mobileMenuVisible);
   };

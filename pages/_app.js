@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }) {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
   const changeMobileMenuVisibility = (value) => {
-    console.log('%c toggleMenuVisibility on appjs ', 'background: red; color: #fff', value);
     setMobileMenuVisible(value);
   };
 
