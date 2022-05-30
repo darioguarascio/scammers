@@ -9,15 +9,14 @@ const MainSection = () => {
             <div className="w-full md:w-2/3 lg:w-1/2 ">
               <div className="py-6 lg:pr-32">
                 <div className="mb-4">
-                  <h2 className="text-6xl text-gray mt-3 font-bolder">
-                    Help us reduce scammer activity
-                  </h2>
+                  <h1 className="text-6xl text-gray mt-3 font-bolder">
+                    Aiutaci a smascherare i truffatori
+                  </h1>
                 </div>
                 <div>
                   <p className="font-medium text-blue-dif text-sm leading-7">
-                    Let&apos;s hep to reduce the victim by collectively
-                    contribute to put together piece of info to try to get an ID
-                    of a Scammer
+                    Segnala la tua esperienza e contribusici al database collettivo
+                    di informazioni sulle truffe online.
                   </p>
                 </div>
                 <div className="flex items-center my-4">
@@ -25,13 +24,13 @@ const MainSection = () => {
                     className="mr-2 inline-block px-7 py-4 text-sm text-blue-600 hover:text-[blue-700] font-semibold leading-none border border-blue-600 rounded-md"
                     href="#"
                   >
-                    Scammer List
+                    Indice truffatori
                   </a>
                   <a
                     className="mr-2 bg-red-400 inline-block px-7 py-4 text-sm text-white font-semibold leading-none border border-red-400 rounded-md"
                     href="#"
                   >
-                    Report a Scam
+                    Segnala una truffa
                   </a>
                 </div>
                 <ul className="text-gray-700 font-medium text-xs flex items-center gap-3">
