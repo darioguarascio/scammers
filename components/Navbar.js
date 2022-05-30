@@ -6,8 +6,9 @@ const Navbar = (props) => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
   const toggleMenuVisibility = () => {
-    setMobileMenuVisible(!mobileMenuVisible);
-    props.onChangeMobileMenuVisibility(mobileMenuVisible);
+    const newVisibility = !mobileMenuVisible
+    setMobileMenuVisible(newVisibility);
+    props.onChangeMobileMenuVisibility(newVisibility);
   };
 
   return (
@@ -16,8 +17,7 @@ const Navbar = (props) => {
         <nav className="flex items-center justify-between py-6">
           <a
             className="text-2xl font-bolder tracking-wide leading-none text-blue-600"
-            href="/"
-          >
+            href="/">
             Truffatori.info
           </a>
         {/*
