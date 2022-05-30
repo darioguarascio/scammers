@@ -22,13 +22,13 @@ const MainSection = () => {
                 <div className="flex items-center my-4">
                   <a
                     className="mr-2 inline-block px-7 py-4 text-sm text-blue-600 hover:text-[blue-700] font-semibold leading-none border border-blue-600 rounded-md"
-                    href="#"
+                    href="/scammer-list"
                   >
                     Indice truffatori
                   </a>
                   <a
                     className="mr-2 bg-red-400 inline-block px-7 py-4 text-sm text-white font-semibold leading-none border border-red-400 rounded-md"
-                    href="#"
+                    href="/scam-report"
                   >
                     Segnala una truffa
                   </a>
