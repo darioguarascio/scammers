@@ -1,18 +1,18 @@
 @font-face {
     font-family: bolder;
-    src: url('/assets/fonts/OpenSans-ExtraBold.ttf');
+    src: url('/assets/fonts/Poppins-ExtraBold.ttf');
 }
 @font-face {
     font-family: bold;
-    src: url('/assets/fonts/OpenSans-Bold.ttf');
+    src: url('/assets/fonts/Poppins-Bold.ttf');
 }
 @font-face {
     font-family: medium;
-    src: url('/assets/fonts/OpenSans-Medium.ttf');
+    src: url('/assets/fonts/Poppins-Medium.ttf');
 }
 @font-face {
     font-family: normal;
-    src: url('/assets/fonts/OpenSans-Regular.ttf');
+    src: url('/assets/fonts/Poppins-Regular.ttf');
 }
 .font-bolder{
     font-family: bolder;

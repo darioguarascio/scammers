@@ -30,7 +30,7 @@ const ScamEvent = () => {
           </div>
           <div className="col-span-2 p-0 lg:px-5">
             <h1 className="font-bolder text-red-400 text-[24px]">Scam Event</h1>
-            <div className="text-gray-700 font-normal">
+            <div className="text-gray-600 text-base font-normal">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

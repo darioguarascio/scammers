@@ -6,10 +6,10 @@ const Item = ({ item }) => {
           <span className="font-bold">{item.codeName}</span>
         </div>
         <div className="col-span-2 flex items-center justify-between cursor-pointer">
-          <span className="font-normal">{item.contact}</span>
+          <span className="font-normal text-gray-600">{item.contact}</span>
         </div>
         <div className="col-span-2 flex items-center justify-between cursor-pointer">
-          <span className="font-normal">{item.platform}</span>
+          <span className="font-normal text-gray-600">{item.platform}</span>
         </div>
         <div className="col-span-2 lg:col-span-1 flex items-center justify-between cursor-pointer">
           <a
