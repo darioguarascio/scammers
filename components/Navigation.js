@@ -1,7 +1,4 @@
-import { useRouter } from "next/router";
-
-const Navigation = () => {
-  const router = useRouter();
+const Navigation = ({ router }) => {
   return (
     <div>
       <div className="w-full flex items-center justify-center mt-3 shadow-sm p-3">

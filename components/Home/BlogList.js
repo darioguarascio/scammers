@@ -16,7 +16,7 @@ const BlogList = () => {
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
         enim ad minim veniam, quis no...`,
         image: "",
-        link: "",
+        link: "/",
       },
       {
         id: 2,
@@ -28,7 +28,7 @@ const BlogList = () => {
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
         enim ad minim veniam, quis no...`,
         image: "",
-        link: "",
+        link: "/",
       },
       {
         id: 3,
@@ -40,7 +40,7 @@ const BlogList = () => {
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
         enim ad minim veniam, quis no...`,
         image: "",
-        link: "",
+        link: "/",
       },
     ]);
   }, []);
