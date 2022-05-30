@@ -14,7 +14,7 @@ const MainSection = () => {
                   </h2>
                 </div>
                 <div>
-                  <p className="font-medium text-gray-800">
+                  <p className="font-medium text-blue-dif text-sm leading-7">
                     Let&apos;s hep to reduce the victim by collectively
                     contribute to put together piece of info to try to get an ID
                     of a Scammer
