@@ -9,7 +9,7 @@ const MainSection = () => {
             <div className="w-full md:w-2/3 lg:w-1/2 ">
               <div className="py-6 lg:pr-32">
                 <div className="mb-4">
-                  <h1 className="text-6xl text-gray mt-3 font-bolder">
+                  <h1 className="text-5xl md:text-6xl text-gray mt-3 font-bolder">
                     Aiutaci a smascherare i truffatori
                   </h1>
                 </div>
