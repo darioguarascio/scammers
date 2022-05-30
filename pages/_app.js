@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
       case "/scam-event":
         title = "Truffatori | Scam Event";
         break;
-      case "/scam-type":
+      case "/truffe":
         title = "Truffatori | Scam Type";
         break;
       default:

@@ -120,12 +120,12 @@ const Navigation = ({ router }) => {
           </li>
           <li
             className={
-              router.pathname == "/scam-type"
+              router.pathname == "/truffe"
                 ? "active-link p-2 sm:p-0"
                 : "p-2 sm:p-0"
             }
           >
-            <Link href="/scam-type">
+            <Link href="/truffe">
               <a className="flex items-center gap-3">
                 <div className="h-5 w-5 relative">
                   <svg
