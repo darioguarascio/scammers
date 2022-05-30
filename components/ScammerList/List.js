@@ -81,7 +81,7 @@ const List = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-7 gap-3 mt-3 bg-gray-100 py-5 px-2 rounded-t-md font-medium text-gray-800 text-sm">
+      <div className="grid grid-cols-4 lg:grid-cols-7 gap-3 mt-3 bg-gray-100 py-5 px-2 rounded-t-md font-medium text-gray-800 text-xs md:text-sm">
         <div
           onClick={() => changeSort("codeName")}
           className="col-span-2 flex items-center justify-between cursor-pointer"
@@ -192,7 +192,7 @@ const List = () => {
         </div>
         <div
           onClick={() => changeSort("action")}
-          className="col-span-1 flex items-center justify-between cursor-pointer"
+          className="col-span-2 lg:col-span-1 flex items-center justify-between cursor-pointer"
         >
           <span className="font-bold">Action</span>
           <div className="grid">
