@@ -4,9 +4,18 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import "../styles/globals.css";
+import {useState} from "react";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+
+  const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+
+  const changeMobileMenuVisibility = (value) => {
+    console.log('%c toggleMenuVisibility on appjs ', 'background: red; color: #fff', value);
+    setMobileMenuVisible(value);
+  };
+
   const getTitle = () => {
     var title = "";
     switch (router.pathname) {
@@ -41,8 +50,14 @@ function MyApp({ Component, pageProps }) {
           content="Let's hep to reduce the victim by collectively contribute to put together piece of info to try to get an ID of a Scammer"
         />
       </Head>
-      <Navbar />
-      <Navigation router={router} />
+      <Navbar onChangeMobileMenuVisibility={changeMobileMenuVisibility} />
+      <div className={
+        mobileMenuVisible === false
+            ? "hidden md:block"
+            : "block"
+      }>
+        <Navigation router={router}  />
+      </div>
       <Component {...pageProps} />
       <Footer />
     </div>
