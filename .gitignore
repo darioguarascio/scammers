@@ -39,4 +39,5 @@ yarn-error.log*
 node_modules
 vendor
 .env
-.directus.env 
+.directus.env
+.idea
