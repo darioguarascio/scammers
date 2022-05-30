@@ -12,8 +12,8 @@ const ScamEvent = () => {
             strokeWidth="3"
           >
             <path
-              strokeLineCap="round"
-              strokeLineJoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>

@@ -96,6 +96,7 @@ const MainSection = () => {
                     src={"/assets/img/background.svg"}
                     layout="fill"
                     className="object-contain"
+                    alt="Reduce scammer activity"
                   ></Image>
                 </div>
               </div>
