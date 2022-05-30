@@ -19,7 +19,7 @@ const Navbar = (props) => {
           >
             Truffatori.info
           </a>
-          <!--
+        {/*
           <div className="ml-auto hidden md:block">
             <a
               className="mr-2 inline-block px-6 py-3 text-sm text-blue-600 hover:text-[blue-700] font-semibold leading-none border border-blue-600 rounded-md"
@@ -34,7 +34,7 @@ const Navbar = (props) => {
               Sign Up
             </a>
           </div>
-          -->
+        */}
           <div className="-mr-2 flex items-center md:hidden">
             <button type="button"
                     onClick={() => toggleMenuVisibility()}
