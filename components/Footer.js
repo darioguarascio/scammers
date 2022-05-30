@@ -19,7 +19,7 @@ const Footer = () => {
 
 
 
-<footer class="bg-gray pt-12 pb-10 lg:pb-20 relative z-10 text-gray-400">
+<footer class="bg-gray pt-12 pb-10 lg:pb-20 relative z-10 text-gray-400 px-4">
    <div class="container mx-auto">
       <div class="flex flex-wrap -mx-4">
          <div class="w-full sm:w-2/3 lg:w-3/12 px-4">
