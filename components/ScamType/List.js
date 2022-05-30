@@ -1,48 +1,11 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
 
-const List = () => {
+const List = ({ data }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setItems([
-      {
-        id: 1,
-        tag: "Scams",
-        title: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-        author: "Anon",
-        date: "29 May 2022",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-        enim ad minim veniam, quis no...`,
-        image: "",
-        link: "",
-      },
-      {
-        id: 2,
-        tag: "Phising",
-        title: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-        author: "Anon",
-        date: "29 May 2022",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-        enim ad minim veniam, quis no...`,
-        image: "",
-        link: "",
-      },
-      {
-        id: 3,
-        tag: "Identity Theft",
-        title: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-        author: "Anon",
-        date: "29 May 2022",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-        enim ad minim veniam, quis no...`,
-        image: "",
-        link: "",
-      },
-    ]);
+    setItems(data.scams);
   }, []);
 
   return (

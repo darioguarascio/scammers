@@ -1,8 +1,7 @@
 import Link from "next/link";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const Navigation = ({ router }) => {
-
   const [navigation, setNavigation] = useState([]);
 
   useEffect(() => {
@@ -85,7 +84,7 @@ const Navigation = ({ router }) => {
       {
         id: 5,
         title: "Scam Type",
-        link: "/scam-type",
+        link: "/truffe",
         icon: `<svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
@@ -109,18 +108,24 @@ const Navigation = ({ router }) => {
       <div className="container mx-auto w-full flex items-center justify-center md:py-3 shadow-sm px-3">
         <ul className="w-full md:flex md:items-center text-sm gap-7 font-medium text-gray-700 divide-y md:divide-none">
           {navigation.map((item) => (
-              <li
-                  className={
-                    router.pathname == item.link ? "active-link p-2 sm:p-0" : "p-2 sm:p-0"
-                  }
-              >
-                <Link href={item.link}>
-                  <a className="flex items-center gap-3">
-                    <div className="h-5 w-5 relative" dangerouslySetInnerHTML={{ __html: item.icon }}></div>
-                    <span>{item.title}</span>
-                  </a>
-                </Link>
-              </li>
+            <li
+              className={
+                router.pathname == item.link
+                  ? "active-link p-2 sm:p-0"
+                  : "p-2 sm:p-0"
+              }
+              key={item.id}
+            >
+              <Link href={item.link}>
+                <a className="flex items-center gap-3">
+                  <div
+                    className="h-5 w-5 relative"
+                    dangerouslySetInnerHTML={{ __html: item.icon }}
+                  ></div>
+                  <span>{item.title}</span>
+                </a>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
