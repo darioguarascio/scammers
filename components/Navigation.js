@@ -105,7 +105,7 @@ const Navigation = ({ router }) => {
 
   return (
     <div>
-      <div className="container mx-auto w-full flex items-center justify-center md:py-3 shadow-sm px-3">
+      <div className="container mx-auto w-full flex items-center justify-center md:py-3 px-3">
         <ul className="w-full md:flex md:items-center text-sm gap-7 font-medium text-gray-700 divide-y md:divide-none">
           {navigation.map((item) => (
             <li

@@ -52,8 +52,8 @@ function MyApp({ Component, pageProps }) {
       <Navbar onChangeMobileMenuVisibility={changeMobileMenuVisibility} />
       <div className={
         mobileMenuVisible === false
-            ? "hidden md:flex items-center justify-center"
-            : "flex items-center justify-center"
+            ? "hidden md:flex items-center justify-center shadow-sm"
+            : "flex items-center justify-center shadow-sm"
       }>
         <Navigation router={router}  />
       </div>
