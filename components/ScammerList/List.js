@@ -13,6 +13,7 @@ const List = () => {
   });
 
   const [items, setItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
 
   const changeSort = (item) => {
     sort[item] =
@@ -22,6 +23,18 @@ const List = () => {
 
   useEffect(() => {
     setItems(scamListdata);
+  }, []);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+
+  useEffect(() => {
+    setFilteredItems(scamListdata.slice( (currentPage-1)*itemsPerPage, currentPage*itemsPerPage ));
+  }, []);
+
+  useEffect(() => {
+    setTotalPage(Math.ceil(scamListdata.length/10));
   }, []);
 
   return (
@@ -183,7 +196,7 @@ const List = () => {
           </thead>
           <tbody>
           {
-            items.map(item => {
+            filteredItems.map(item => {
               return (
                   <Item item={item} key={item.id} />
               )
