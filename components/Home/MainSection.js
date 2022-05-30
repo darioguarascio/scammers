@@ -33,7 +33,7 @@ const MainSection = () => {
                     Segnala una truffa
                   </a>
                 </div>
-                <--
+                {/*
                 <ul className="text-gray-700 font-medium text-xs flex items-center gap-3">
                   <li className="flex items-center gap-1">
                     <div className="text-blue-600">
@@ -87,7 +87,7 @@ const MainSection = () => {
                     <span>Lorem Ipsum</span>
                   </li>
                 </ul>
-                -->
+                */}
               </div>
             </div>
             <div className="relative w-full md:w-1/3 lg:w-1/2 my-12 lg:my-0">
