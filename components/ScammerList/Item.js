@@ -1,26 +1,22 @@
 const Item = ({ item }) => {
   return (
-    <div>
-      <div className="grid  grid-cols-4 lg:grid-cols-7 gap-3 border border-t-0 py-5 px-2 font-medium text-gray-800 text-sm">
-        <div className="col-span-2 flex items-center justify-between cursor-pointer">
-          <span className="font-bold">{item.codeName}</span>
-        </div>
-        <div className="col-span-2 flex items-center justify-between cursor-pointer">
-          <span className="font-normal text-gray-600">{item.contact}</span>
-        </div>
-        <div className="col-span-2 flex items-center justify-between cursor-pointer">
-          <span className="font-normal text-gray-600">{item.platform}</span>
-        </div>
-        <div className="col-span-2 lg:col-span-1 flex items-center justify-between cursor-pointer">
-          <a
-            className="mr-2 bg-red-400 hover:bg-red-500 inline-block p-3 text-xs text-white font-semibold leading-none border rounded-md"
-            href={item.action ?? "#"}
-          >
-            Report a Scam
+      <tr className="bg-white border-b hover:bg-gray-50">
+        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+          {item.codeName}
+        </th>
+        <td className="px-6 py-4">
+          {item.contact}
+        </td>
+        <td className="px-6 py-4">
+          {item.platform}
+        </td>
+        <td className="px-6 py-4 text-right">
+          <a href="#"
+             className="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mr-2 mb-2 focus:outline-none">
+            Report Scam
           </a>
-        </div>
-      </div>
-    </div>
+        </td>
+      </tr>
   );
 };
 
