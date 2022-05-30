@@ -55,29 +55,29 @@ const BlogList = () => {
             </h2>
           </div>
           <div>
-            <ul className="font-medium text-sm my-2 flex items-center gap-3">
-              <li className="active-tab">
-                <span className="text-[#1565D8] bg-[#E8F0FB] p-1.5 px-4 rounded-md cursor-pointer">
+            <ul className="font-medium text-sm my-2 flex items-center justify-center flex-wrap  gap-3">
+              <li className="active-tab mb-4 md:mb-0">
+                <span className="text-blue-600 bg-blue-100 p-1.5 px-4 rounded-md cursor-pointer">
                   All
                 </span>
               </li>
-              <li>
-                <span className="text-[#1565D8] bg-[#E8F0FB] p-1.5 px-4 rounded-md cursor-pointer">
+              <li className="mb-4 md:mb-0">
+                <span className="text-blue-600 bg-blue-100 p-1.5 px-4 rounded-md cursor-pointer">
                   Scams
                 </span>
               </li>
-              <li>
-                <span className="text-[#1565D8] bg-[#E8F0FB] p-1.5 px-4 rounded-md cursor-pointer">
+              <li className="mb-4 md:mb-0">
+                <span className="text-blue-600 bg-blue-100 p-1.5 px-4 rounded-md cursor-pointer">
                   Phising
                 </span>
               </li>
-              <li>
-                <span className="text-[#1565D8] bg-[#E8F0FB] p-1.5 px-4 rounded-md cursor-pointer">
+              <li className="mb-4 md:mb-0">
+                <span className="text-blue-600 bg-blue-100 p-1.5 px-4 rounded-md cursor-pointer">
                   Internet Banking Fraud
                 </span>
               </li>
-              <li>
-                <span className="text-[#1565D8] bg-[#E8F0FB] p-1.5 px-4 rounded-md cursor-pointer">
+              <li className="mb-4 md:mb-0">
+                <span className="text-blue-600 bg-blue-100 p-1.5 px-4 rounded-md cursor-pointer">
                   Identity Theft
                 </span>
               </li>
@@ -93,7 +93,7 @@ const BlogList = () => {
         </div>
       </div>
       <div className="flex items-center justify-center my-4">
-        <button className="bg-[#3254fe] p-3 px-5 rounded-md text-white font-bolder text-sm">
+        <button className="bg-blue-600 p-3 px-5 rounded-md text-white font-bolder text-sm">
           Load More
         </button>
       </div>

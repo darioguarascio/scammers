@@ -2,14 +2,14 @@ import Image from "next/image";
 
 const MainSection = () => {
   return (
-    <div className="bg-[#f9fcff]">
-      <section className="py-12 md:py-24 overflow-x-hidden">
+    <div className="bg-gray-100">
+      <section className="py-5 md:py-10 lg:py-24 overflow-x-hidden">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap lg:flex-nowrap">
             <div className="w-full md:w-2/3 lg:w-1/2 ">
               <div className="py-6 lg:pr-32">
                 <div className="mb-4">
-                  <h2 className="text-6xl text-[#333] mt-3 font-bolder">
+                  <h2 className="text-6xl text-gray mt-3 font-bolder">
                     Help us reduce scammer activity
                   </h2>
                 </div>
@@ -22,13 +22,13 @@ const MainSection = () => {
                 </div>
                 <div className="flex items-center my-4">
                   <a
-                    className="mr-2 inline-block px-7 py-4 text-sm text-blue-600 hover:text-[blue-700] font-semibold leading-none border border-[#3254fe] rounded-md"
+                    className="mr-2 inline-block px-7 py-4 text-sm text-blue-600 hover:text-[blue-700] font-semibold leading-none border border-blue-600 rounded-md"
                     href="#"
                   >
                     Scammer List
                   </a>
                   <a
-                    className="mr-2 bg-[#fc5a5a] inline-block px-7 py-4 text-sm text-white font-semibold leading-none border border-[#fc5a5a] rounded-md"
+                    className="mr-2 bg-red-400 inline-block px-7 py-4 text-sm text-white font-semibold leading-none border border-red-400 rounded-md"
                     href="#"
                   >
                     Report a Scam
@@ -36,7 +36,7 @@ const MainSection = () => {
                 </div>
                 <ul className="text-gray-700 font-medium text-xs flex items-center gap-3">
                   <li className="flex items-center gap-1">
-                    <div className="text-[#3254fe]">
+                    <div className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -53,7 +53,7 @@ const MainSection = () => {
                     <span>Lorem</span>
                   </li>
                   <li className="flex items-center gap-1">
-                    <div className="text-[#3254fe]">
+                    <div className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -70,7 +70,7 @@ const MainSection = () => {
                     <span>Lorem</span>
                   </li>
                   <li className="flex items-center gap-1">
-                    <div className="text-[#3254fe]">
+                    <div className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"

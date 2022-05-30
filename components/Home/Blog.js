@@ -4,9 +4,9 @@ const Blog = ({ blog }) => {
     <div>
       <div className="col-span-1">
         <div>
-          <div className="bg-[#eee] h-[240px] w-full rounded-md relative">
+          <div className="bg-gray-200 h-[240px] w-full rounded-md relative">
             {/* Image */}
-            <span className="absolute top-3 right-3 bg-[#fc5a5a] p-1 px-3 rounded-md text-sm font-bold text-white">
+            <span className="absolute top-3 right-3 bg-red-400 p-1 px-3 rounded-md text-sm font-bold text-white">
               {blog.tag}
             </span>
           </div>

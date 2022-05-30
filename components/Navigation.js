@@ -113,7 +113,9 @@ const Navigation = () => {
           </li>
           <li
             className={
-              router.pathname == "/scam-type" ? "active-link p-2 sm:p-0" : ""
+              router.pathname == "/scam-type"
+                ? "active-link p-2 sm:p-0"
+                : "p-2 sm:p-0"
             }
           >
             <a href="scam-type" className="flex items-center gap-3">

@@ -4,7 +4,7 @@ const Item = ({ item }) => {
       <div>
         <div className="col-span-1">
           <div>
-            <div className="bg-[#eee] h-[240px] w-full rounded-t-md relative">
+            <div className="bg-gray-200 h-[240px] w-full rounded-t-md relative">
               {/* Image */}
             </div>
             <div className="bg-blue-50 p-5 rounded-b-md">
