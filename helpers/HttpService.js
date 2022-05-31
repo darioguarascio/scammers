@@ -18,7 +18,10 @@ export default class HttpService {
     })
       .then((response) => response.json())
       .then((data) => {
-        return data.data;
+        return {
+          total: typeof data.meta !== "undefined" && data.meta.total_count,
+          data: data.data,
+        };
       })
       .catch(function (err) {
         console.log("Something went Wrong!");

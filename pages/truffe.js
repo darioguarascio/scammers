@@ -21,7 +21,7 @@ export async function getStaticProps() {
   const posts = await loadScams();
   return {
     props: {
-      posts: posts || null,
+      posts: typeof posts.data !== "undefined" && posts.data,
     },
   };
 }

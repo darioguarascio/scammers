@@ -43,7 +43,7 @@ const RelatedScammer = ({ scammer }) => {
           {scammer.phone_numbers && (
             <ul>
               {scammer.phone_numbers.map((item) => (
-                <li>{item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           )}

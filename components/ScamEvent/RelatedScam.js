@@ -5,7 +5,7 @@ const RelatedScam = ({ scam }) => {
     <div>
       <h4 className="text-xl font-medium text-gray-700 my-3">Related Scam</h4>
       <div>
-        <Link href={"truffe/" + scam.slug ?? "#"}>
+        <Link href={"/truffe/" + scam.slug ?? "#"}>
           <a className="flex items-center">
             <div className="bg-gray-200 h-[100px] w-[150px] rounded-md relative">
               {scam.picture ? (
@@ -14,7 +14,7 @@ const RelatedScam = ({ scam }) => {
                     process.env.APP_DIRECTUS_URL +
                     "assets/" +
                     scam.picture +
-                    "height:240"
+                    "?height=140"
                   }
                   loading="lazy"
                   className="h-full object-cover w-full rounded-md"

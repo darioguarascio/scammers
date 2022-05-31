@@ -20,7 +20,7 @@ const Blog = ({ blog }) => {
                   process.env.APP_DIRECTUS_URL +
                   "assets/" +
                   blog.picture +
-                  "height:240"
+                  "?height=340"
                 }
                 loading="lazy"
                 className="h-full object-cover w-full rounded-md"
