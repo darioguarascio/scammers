@@ -31,6 +31,7 @@ function Scam({ post }) {
                       post.picture +
                       "height:240"
                     }
+                    alt={post.title}
                     loading="lazy"
                     className="h-full object-cover w-full rounded-md"
                   />
