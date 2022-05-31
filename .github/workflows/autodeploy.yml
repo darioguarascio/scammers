@@ -18,6 +18,9 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          whoami
-          echo 1
           git pull
+          npm i
+
+
+
+
