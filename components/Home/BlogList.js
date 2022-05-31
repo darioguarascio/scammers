@@ -5,7 +5,9 @@ const BlogList = ({ data }) => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    setBlogs(data.scams);
+    if (typeof data.scams !== "undefined") {
+      setBlogs(data.scams);
+    }
   }, [data]);
 
   return (

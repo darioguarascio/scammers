@@ -14,22 +14,28 @@ const Blog = ({ blog }) => {
       <div className="col-span-1">
         <div>
           <div className="bg-gray-200 h-[240px] w-full rounded-md relative">
-            <img
-              src={
-                process.env.APP_DIRECTUS_URL +
-                "assets/" +
-                blog.picture +
-                "height:240"
-              }
-              loading="lazy"
-              className="h-full object-cover w-full rounded-md"
-            />
-            {blog.tag !== "undefined" ? (
-              <span className="absolute top-3 right-3 bg-red-400 p-1 px-3 rounded-md text-sm font-bold text-white">
-                {blog.tag}
-              </span>
+            {blog.picture ? (
+              <img
+                src={
+                  process.env.APP_DIRECTUS_URL +
+                  "assets/" +
+                  blog.picture +
+                  "height:240"
+                }
+                loading="lazy"
+                className="h-full object-cover w-full rounded-md"
+              />
             ) : (
-              ""
+              <div className="flex h-full w-full items-center justify-center">
+                <div className="text-center">
+                  <p className="font-bolder text-gray-500">No Photo</p>
+                  <div className="text-xs">
+                    <small className="font-normal text-gray-700">
+                      Truffatori
+                    </small>
+                  </div>
+                </div>
+              </div>
             )}
           </div>
           <div className="flex items-center gap-2 text-xs font-medium my-2 text-gray-800">
@@ -40,7 +46,7 @@ const Blog = ({ blog }) => {
             <p className="text-sm text-gray-600 my-2 line-clamp-3">
               {blog.description}
             </p>
-            <Link href={"scams/" + blog.slug ?? "#"}>
+            <Link href={"truffe/" + blog.slug ?? "#"}>
               <a className="text-blue-700 font-bold text-sm">Read More</a>
             </Link>
           </div>

@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import HttpService from "../../helpers/HttpService";
 import md from "markdown-it";
 import Head from "next/head";
+import ScamAction from "../../actions/ScamAction";
 
 function Scam({ post }) {
   return (
@@ -78,14 +79,11 @@ function Scam({ post }) {
 export default Scam;
 
 export async function loadScams() {
-  const http = new HttpService();
-  let url = "graphql?query={scams{slug}}";
-  return http.getData(url);
+  return new ScamAction().getData("slug");
 }
+
 export async function loadScam(slug) {
-  const http = new HttpService();
-  let url = "items/scams?filter[slug]=" + slug;
-  return http.getData(url);
+  return new ScamAction().getOne(slug);
 }
 
 export async function getStaticProps(contex) {
