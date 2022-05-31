@@ -5,7 +5,7 @@ const scammerList = ({ posts }) => {
   return (
     <div>
       <div className="container px-4 mx-auto my-3">
-        <List data={posts} />
+        {posts && <List data={posts} />}
       </div>
     </div>
   );
@@ -18,11 +18,11 @@ export async function loadScams() {
   return http.getData(url);
 }
 export async function getStaticProps() {
-// export async function getServerSideProps() {
+  // export async function getServerSideProps() {
   const posts = await loadScams();
   return {
     props: {
-      posts,
+      posts: posts || null,
     },
   };
 }

@@ -4,7 +4,6 @@ import md from "markdown-it";
 import Head from "next/head";
 
 function Scam({ post }) {
-  console.log(post);
   return (
     <div>
       <Head>
@@ -13,10 +12,16 @@ function Scam({ post }) {
         <meta name="keywords" content={post.meta_keywords} />
         <meta property="og:title" content={post.meta_title} />
         <meta property="og:type" content="scam article" />
-        <meta property="og:image" content={post.picture} />
+        <meta
+          property="og:image"
+          content={process.env.APP_DIRECTUS_URL + "assets/" + post.picture}
+        />
         <meta name="twitter:title" content={post.meta_title} />
         <meta name="twitter:description" content={post.meta_description} />
-        <meta name="twitter:image" content={post.picture} />
+        <meta
+          name="twitter:image"
+          content={process.env.APP_DIRECTUS_URL + "assets/" + post.picture}
+        />
       </Head>
       <div>
         <div className="container px-4 mx-auto my-3">
