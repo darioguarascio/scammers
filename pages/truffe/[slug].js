@@ -1,10 +1,23 @@
 import { useRouter } from "next/router";
 import HttpService from "../../helpers/HttpService";
 import md from "markdown-it";
+import Head from "next/head";
 
 function Scam({ post }) {
+  console.log(post);
   return (
     <div>
+      <Head>
+        <meta name="title" content={post.meta_title} />
+        <meta name="description" content={post.meta_description} />
+        <meta name="keywords" content={post.meta_keywords} />
+        <meta property="og:title" content={post.meta_title} />
+        <meta property="og:type" content="scam article" />
+        <meta property="og:image" content={post.picture} />
+        <meta name="twitter:title" content={post.meta_title} />
+        <meta name="twitter:description" content={post.meta_description} />
+        <meta name="twitter:image" content={post.picture} />
+      </Head>
       <div>
         <div className="container px-4 mx-auto my-3">
           <div className="grid grid-cols-1 lg:grid-cols-3">
