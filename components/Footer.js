@@ -31,7 +31,7 @@ const Footer = () => {
                   voluptatem totam rem aperiam.
                </p>
                <p className="flex items-center text-sm text-dark font-medium">
-                  <span clasName="text-primary mr-3">
+                  <span className="text-primary mr-3">
                      <svg
                         width="19"
                         height="21"
@@ -131,7 +131,7 @@ const Footer = () => {
                         mb-2
                         "
                         >
-                     About TailGrids
+                     About
                      </a>
                   </li>
                   <li>
@@ -363,7 +363,7 @@ const Footer = () => {
                      </svg>
                   </a>
                </div>
-               <p className="text-base text-body-color">&copy; 2025 TailGrids</p>
+               {/* <p className="text-base text-body-color">&copy; 2025 TailGrids</p> */}
             </div>
          </div>
       </div>

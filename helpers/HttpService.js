@@ -3,12 +3,13 @@ export default class HttpService {
   headers = {
     Accept: "application/json",
     "Content-Type": "application/json",
-    "CF-Access-Client-Secret":
-      "4369635d8d79859f590e4ade9df76bacf284338b10db8278d935871c2d3e3c99",
-    "CF-Access-Client-Id": "8999599caf935f9a85710d15d51c02d4.access",
+    "CF-Access-Client-Secret": process.env.CF_ACCESS_CLIENT_SECRET,
+    "CF-Access-Client-Id": process.env.CF_ACCESS_CLIENT_ID,
   };
   getData = async (addedUrl) => {
-    return fetch(this.API_URL + addedUrl + "&fields=*&access_token=token", {
+    let url = this.API_URL + addedUrl + "&fields=*&access_token=" + process.env.DIRECTUS_TOKEN;
+    console.log(url)
+    return fetch(url, {
       headers: this.headers,
     })
       .then((response) => response.json())

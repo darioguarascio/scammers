@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link'
 
 const MainSection = () => {
   return (
@@ -20,18 +21,24 @@ const MainSection = () => {
                   </p>
                 </div>
                 <div className="flex items-center my-4">
-                  <a
-                    className="mr-2 inline-block px-7 py-4 text-sm text-blue-600 hover:text-[blue-700] font-semibold leading-none border border-blue-600 rounded-md"
+                  <Link
                     href="/scammer-list"
                   >
-                    Indice truffatori
-                  </a>
-                  <a
-                    className="mr-2 bg-red-400 inline-block px-7 py-4 text-sm text-white font-semibold leading-none border border-red-400 rounded-md"
+                    <a
+                      className="mr-2 inline-block px-7 py-4 text-sm text-blue-600 hover:text-[blue-700] font-semibold leading-none border border-blue-600 rounded-md"
+                    >
+                      Indice truffatori
+                    </a>
+                  </Link>
+                  <Link
                     href="/scam-report"
                   >
-                    Segnala una truffa
-                  </a>
+                    <a
+                      className="mr-2 bg-red-400 inline-block px-7 py-4 text-sm text-white font-semibold leading-none border border-red-400 rounded-md"
+                    >
+                      Segnala una truffa
+                    </a>
+                  </Link>
                 </div>
                 {/*
                 <ul className="text-gray-700 font-medium text-xs flex items-center gap-3">

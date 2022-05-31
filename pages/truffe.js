@@ -18,6 +18,7 @@ export async function loadScams() {
   return http.getData(url);
 }
 export async function getStaticProps() {
+// export async function getServerSideProps() {
   const posts = await loadScams();
   return {
     props: {

@@ -15,11 +15,15 @@ const Navbar = (props) => {
     <div>
       <div className="container px-4 mx-auto">
         <nav className="flex items-center justify-between py-6">
-          <a
-            className="text-2xl font-bolder tracking-wide leading-none text-blue-600"
-            href="/">
+          <Link
+            href="/"
+          >
+            <a
+              className="text-2xl font-bolder tracking-wide leading-none text-blue-600"
+            >
             Truffatori.info
-          </a>
+            </a>
+          </Link>
         {/*
           <div className="ml-auto hidden md:block">
             <a

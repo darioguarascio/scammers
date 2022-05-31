@@ -40,7 +40,7 @@ function Scam({ post }) {
                 {post.title}
               </h1>
               <div className="text-gray-600 text-base font-normal">
-                <article class="prose">
+                <article className="prose">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: md().render(post.description),
