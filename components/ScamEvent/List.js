@@ -11,28 +11,28 @@ const List = ({ data, onSetPage, total, pageInfo }) => {
     <div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg my-4">
         <table className="w-full text-sm text-left text-gray-500">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-200">
+          <thead className="text-xs text-gray-700  uppercase bg-gray-200">
             <tr>
               <th scope="col" className="px-6 py-1 cursor-pointer">
-                <div className="flex flex-row items-center gap-x-2">
+                <div className="flex py-3 flex-row items-center gap-x-2">
                   <span>Codenme of scammer</span>
                 </div>
               </th>
               <th scope="col" className="px-6 py-1 cursor-pointer">
                 <div className="flex flex-row items-center gap-x-2">
-                  <span>Contact</span>
+                  <span>Date</span>
                   <div className="grid"></div>
                 </div>
               </th>
               <th scope="col" className="px-6 py-1 cursor-pointer">
                 <div className="flex flex-row items-center gap-x-2">
-                  <span>Platform</span>
+                  <span>Amount</span>
                   <div className="grid"></div>
                 </div>
               </th>
               <th scope="col" className="px-6 py-1 cursor-pointer text-right">
                 <div className="flex flex-row items-center justify-center gap-x-2">
-                  <span>Action</span>
+                  <span></span>
                   <div></div>
                 </div>
               </th>
