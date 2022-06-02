@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ScammerAction from "../actions/ScammerAction";
 import List from "../components/ScammerList/List";
 
-const scammerList = ({ items, total }) => {
+const ScammerList = ({ items, total }) => {
   const [pageInfo, setPageInfo] = useState({
     page: 1,
     perpage: 10,
@@ -129,4 +129,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default scammerList;
+export default ScammerList;

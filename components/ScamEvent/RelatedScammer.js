@@ -75,6 +75,7 @@ const RelatedScammer = ({ scammer }) => {
                         <a
                           href={scammer.links}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="break-words"
                         >
                           {scammer.links}

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import EventAction from "../../actions/EventAction";
 import List from "../../components/ScamEvent/List";
 
-const scamEvent = ({ items, total }) => {
+const ScamEvent = ({ items, total }) => {
   const [pageInfo, setPageInfo] = useState({
     page: 1,
   });
@@ -72,4 +72,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default scamEvent;
+export default ScamEvent;
