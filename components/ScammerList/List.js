@@ -10,8 +10,6 @@ const List = ({ data, onSetPage, onSetPerPage, total, pageInfo, addSort }) => {
     platform: null,
   });
 
-  const [items, setItems] = useState([]);
-
   const changeSort = (item) => {
     sort[item] =
       sort[item] === "desc" ? "asc" : sort[item] === null ? "desc" : null;
@@ -19,6 +17,7 @@ const List = ({ data, onSetPage, onSetPerPage, total, pageInfo, addSort }) => {
     addSort(sort);
   };
 
+  const [items, setItems] = useState([]);
   useEffect(() => {
     setItems(data);
   }, [data]);
