@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import HttpService from "../../helpers/HttpService";
 import md from "markdown-it";
 import Head from "next/head";
 import ScamAction from "../../actions/ScamAction";
@@ -95,8 +94,9 @@ export async function getServerSideProps(context) {
   const post = await loadScam(params.slug);
 
   return {
+    notFound: typeof post.data === "undefined",
     props: {
-      post: typeof post.data && post.data[0],
+      post: typeof post.data && post.data,
     },
   };
 }

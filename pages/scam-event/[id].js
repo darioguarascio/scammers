@@ -104,8 +104,9 @@ export async function getServerSideProps(context) {
   const event = await loadEvent(params.id);
 
   return {
+    notFound: typeof event.data === "undefined",
     props: {
-      event: typeof event.data !== "undefined" && event.data[0],
+      event: typeof event.data !== "undefined" && event.data,
     },
   };
 }

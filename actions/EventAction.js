@@ -1,21 +1,33 @@
-import HttpService from "../helpers/HttpService";
+import directus from "../helpers/DirectusService";
 
 export default class EventAction {
-  getData = (fields = "") => {
-    const http = new HttpService();
-    let url = "graphql?query={events{" + fields + "}}";
-    return http.getData(url);
-  };
-  getOne = (id) => {
-    const http = new HttpService();
-    let url = "items/events?filter[id]=" + id + "&fields=*.*";
-    return http.getData(url);
-  };
-  getPaginateData = (page = 1) => {
-    const http = new HttpService();
-    let url =
-      "items/events?limit=10&meta=total_count&page=" + page + "&fields=*.*";
+  getData = async (fields = "") => {
+    const { data, meta } = await directus.items("events").readByQuery({
+      meta: "total_count",
+      fields,
+    });
 
-    return http.getData(url);
+    return { total: meta && meta.total_count, data };
+  };
+  getOne = async (id) => {
+    try {
+      const data = await directus.items("events").readOne(id, {
+        fields: "*.*",
+      });
+
+      return { data };
+    } catch (err) {
+      return { data: undefined };
+    }
+  };
+  getPaginateData = async (page = 1) => {
+    const { data, meta } = await directus.items("events").readByQuery({
+      meta: "total_count",
+      limit: 10,
+      page,
+      fields: "*.*",
+    });
+
+    return { total: meta && meta.total_count, data };
   };
 }

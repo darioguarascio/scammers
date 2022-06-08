@@ -5,7 +5,7 @@ const List = ({ data }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setItems(data.scams);
+    setItems(data);
   }, []);
 
   return (

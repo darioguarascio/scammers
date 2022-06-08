@@ -1,6 +1,5 @@
 import ScamAction from "../actions/ScamAction";
 import List from "../components/ScamType/List";
-import HttpService from "../helpers/HttpService";
 
 const scammerList = ({ posts }) => {
   return (
@@ -13,12 +12,18 @@ const scammerList = ({ posts }) => {
 };
 
 export async function loadScams() {
-  return new ScamAction().getData(
-    "id title description picture slug date_created"
-  );
+  return new ScamAction().getData([
+    "id",
+    "title",
+    "description",
+    "picture",
+    "slug",
+    "date_created",
+  ]);
 }
 export async function getServerSideProps() {
   const posts = await loadScams();
+
   return {
     props: {
       posts: typeof posts.data !== "undefined" && posts.data,

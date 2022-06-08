@@ -1,25 +1,19 @@
-import HttpService from "../helpers/HttpService";
+import directus from "../helpers/DirectusService";
 
 export default class ScammerAction {
-  getData = (perPage = 10, page = 1, codenameSort = null) => {
+  getData = async (perPage = 10, page = 1, codenameSort = null) => {
     perPage = [10, 25, 50].includes(parseInt(perPage)) ? perPage : 10;
 
-    var codename = "";
-    if (codenameSort === "desc") {
-      codename = "&sort=-codename";
-    } else if (codenameSort === "asc") {
-      codename = "&sort=codename";
-    }
+    const { data, meta } = await directus.items("scammers").readByQuery({
+      meta: "total_count",
+      page,
+      limit: perPage,
+      fields: "*.*",
+      sort: codenameSort
+        ? [codenameSort === "asc" ? "codename" : "-codename"]
+        : undefined,
+    });
 
-    const http = new HttpService();
-    let url =
-      "items/scammers?limit=" +
-      perPage +
-      "&meta=total_count&page=" +
-      page +
-      "&fields=*.*" +
-      codename;
-
-    return http.getData(url);
+    return { total: meta && meta.total_count, data };
   };
 }

@@ -1,7 +1,6 @@
 import ScamAction from "../actions/ScamAction";
 import BlogList from "../components/Home/BlogList";
 import MainSection from "../components/Home/MainSection";
-import HttpService from "../helpers/HttpService";
 
 function Home({ posts }) {
   return (
