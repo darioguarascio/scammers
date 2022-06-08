@@ -81,39 +81,40 @@ function Scam({ post }) {
 
 export default Scam;
 
-export async function loadScams() {
-  return new ScamAction().getData("slug");
-}
+// export async function loadScams() {
+//   return new ScamAction().getData("slug");
+// }
 
 export async function loadScam(slug) {
   return new ScamAction().getOne(slug);
 }
 
-export async function getStaticProps(contex) {
-  const { params } = contex;
+export async function getServerSideProps(context) {
+  const { params } = context;
   const post = await loadScam(params.slug);
 
   return {
+    notFound: typeof post.data === "undefined",
     props: {
       post: typeof post.data && post.data,
     },
   };
 }
 
-export async function getStaticPaths() {
-  const data = await loadScams();
-  const paths =
-    typeof data.data &&
-    data.data.map((post) => {
-      return {
-        params: {
-          slug: `${post.slug}`,
-        },
-      };
-    });
+// export async function getStaticPaths() {
+//   const data = await loadScams();
+//   const paths =
+//     typeof data.data &&
+//     data.data.scams.map((post) => {
+//       return {
+//         params: {
+//           slug: `${post.slug}`,
+//         },
+//       };
+//     });
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }

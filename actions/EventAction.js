@@ -1,9 +1,7 @@
-import directus, { authDirectus } from "../helpers/DirectusService";
+import directus from "../helpers/DirectusService";
 
 export default class EventAction {
   getData = async (fields = "") => {
-    await authDirectus();
-
     const { data, meta } = await directus.items("events").readByQuery({
       meta: "total_count",
       fields,
@@ -12,17 +10,17 @@ export default class EventAction {
     return { total: meta && meta.total_count, data };
   };
   getOne = async (id) => {
-    await authDirectus();
+    try {
+      const data = await directus.items("events").readOne(id, {
+        fields: "*.*",
+      });
 
-    const data = await directus.items("events").readOne(Number(id), {
-      fields: "*.*",
-    });
-
-    return { data };
+      return { data };
+    } catch (err) {
+      return { data: undefined };
+    }
   };
   getPaginateData = async (page = 1) => {
-    await authDirectus();
-
     const { data, meta } = await directus.items("events").readByQuery({
       meta: "total_count",
       limit: 10,

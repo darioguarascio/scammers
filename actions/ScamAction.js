@@ -1,9 +1,7 @@
-import directus, { authDirectus } from "../helpers/DirectusService";
+import directus from "../helpers/DirectusService";
 
 export default class ScamAction {
   getOne = async (slug) => {
-    await authDirectus();
-
     const { data } = await directus.items("scams").readByQuery({
       filter: {
         slug: {
@@ -11,11 +9,10 @@ export default class ScamAction {
         },
       },
     });
+
     return { data: data[0] };
   };
   getData = async (fields = []) => {
-    await authDirectus();
-
     const { data } = await directus.items("scams").readByQuery({
       fields,
     });

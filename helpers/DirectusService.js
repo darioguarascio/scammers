@@ -8,15 +8,12 @@ const headers = {
 };
 
 const directus = new Directus(API_URL, {
-  transport: { headers },
+  transport: {
+    headers,
+    params: {
+      access_token: TOKEN,
+    },
+  },
 });
-
-export const authDirectus = async () => {
-  if (directus.auth.token) {
-    return;
-  }
-
-  await directus.auth.static(TOKEN);
-};
 
 export default directus;

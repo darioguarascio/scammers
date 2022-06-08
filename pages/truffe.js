@@ -21,7 +21,7 @@ export async function loadScams() {
     "date_created",
   ]);
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const posts = await loadScams();
 
   return {

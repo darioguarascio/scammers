@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import "../styles/globals.css";
-import {useState} from "react";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -50,17 +50,25 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Navbar onChangeMobileMenuVisibility={changeMobileMenuVisibility} />
-      <div className={
-        mobileMenuVisible === false
+      <div
+        className={
+          mobileMenuVisible === false
             ? "hidden md:flex items-center justify-center shadow-sm"
             : "flex items-center justify-center shadow-sm"
-      }>
-        <Navigation router={router}  />
+        }
+      >
+        <Navigation router={router} />
       </div>
       <Component {...pageProps} />
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
 }
 
 export default MyApp;

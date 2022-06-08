@@ -11,6 +11,10 @@ function Home({ posts }) {
   );
 }
 
+export async function getServerSideProps() {
+  return { props: {} };
+}
+
 // export async function loadScams() {
 //   return new ScamAction().getData(
 //     "id title description picture slug date_created"

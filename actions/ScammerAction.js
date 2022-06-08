@@ -1,9 +1,7 @@
-import directus, { authDirectus } from "../helpers/DirectusService";
+import directus from "../helpers/DirectusService";
 
 export default class ScammerAction {
   getData = async (perPage = 10, page = 1, codenameSort = null) => {
-    await authDirectus();
-
     perPage = [10, 25, 50].includes(parseInt(perPage)) ? perPage : 10;
 
     const { data, meta } = await directus.items("scammers").readByQuery({
