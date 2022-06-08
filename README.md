@@ -32,3 +32,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+--
+
+##
+### Varnish setup
+
+sample file for `.config/varnish_backends.vcl`
+
+```
+backend backend_node_0 {
+    .host = "scammers.node";
+    .port = "3000";
+    .connect_timeout = 5s;
+    .first_byte_timeout = 15s;
+    .between_bytes_timeout = 1s;
+}
+sub vcl_init {
+    new be_web = directors.round_robin();
+    be_web.add_backend(backend_node_0);
+}
+
+sub host_to_backend_hinting {
+    set req.backend_hint = be_web.backend();
+}
+```

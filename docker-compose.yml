@@ -5,9 +5,10 @@ volumes:
     driver: local
   data-directus:
     driver: local
+  data-varnish:
+    driver: local
 
 services:
-
   redis:
     image: redis
     container_name: scammers.redis
@@ -73,34 +74,31 @@ services:
     ports:
       - ${NODE_LISTEN:-127.0.0.1:3000:3000}
 
-
-
-
-  # varnish:
-  #   image: darioguarascio/varnish-elk-docker:latest
-  #   container_name: scammers.varnish
-  #   volumes:
-  #     - data-varnish:/vcache:rw
-  #     - ./config/varnish_backends.vcl:/usr/share/varnish/vcl/varnish_backends.vcl
-  #   environment:
-  #     ENV: ${ENV:-dev}
-  #     VARNISHD_MEMORY: ${VARNISHD_MEMORY:-malloc,32m}
-  #     VARNISH_PURGE_KEY: ${VARNISH_PURGE_KEY:-dev}
-
-  #   healthcheck:
-  #     test: ["CMD", "sh", "-c", "test -e /proc/`cat /varnish.pid` || (kill -s 15 -1 && (sleep 10; kill -s 9 -1)) " ]
-  #     interval: 5s
-  #     timeout: 1s
-  #     retries: 1
-  #     start_period: 5s
-  #   logging:
-  #     driver: syslog
-  #     options:
-  #       cache-disabled: "false"
-  #       syslog-address: udp://${VARNISH_LOGGER_IP:-127.0.0.1}:${VARNISH_LOGGER_PORT:-5445}
-  #   #     # syslog-format: "rfc3164"
-  #   #     # tag: "node-red"
-  #   restart: always
-  #   ports:
-  #     - ${VARNISH_LISTEN:-80}:80
+  varnish:
+    image: darioguarascio/varnish-elk-docker:latest
+    container_name: scammers.varnish
+    volumes:
+      - data-varnish:/vcache:rw
+      - ./.config/varnish_backends.vcl:/usr/share/varnish/vcl/varnish_backends.vcl
+    environment:
+      # this variable defines the hash vs pass behavior
+      ENV: ${ENV:-dev}
+      VARNISHD_MEMORY: ${VARNISHD_MEMORY:-malloc,32m}
+      VARNISH_PURGE_KEY: ${VARNISH_PURGE_KEY:-dev}
+    healthcheck:
+      test: ["CMD", "sh", "-c", "test -e /proc/`cat /varnish.pid` || (kill -s 15 -1 && (sleep 10; kill -s 9 -1)) " ]
+      interval: 5s
+      timeout: 1s
+      retries: 1
+      start_period: 5s
+    restart: always
+    ports:
+      - ${VARNISH_LISTEN:-80}:80
+    # logging:
+    #   driver: syslog
+    #   options:
+    #     cache-disabled: "false"
+    #     syslog-address: udp://${VARNISH_LOGGER_IP:-127.0.0.1}:${VARNISH_LOGGER_PORT:-5445}
+    #     # syslog-format: "rfc3164"
+    #     # tag: "node-red"
 

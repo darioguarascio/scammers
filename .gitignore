@@ -41,3 +41,4 @@ vendor
 .env
 .directus.env
 .idea
+.config
