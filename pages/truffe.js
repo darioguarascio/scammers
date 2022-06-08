@@ -17,7 +17,7 @@ export async function loadScams() {
     "id title description picture slug date_created"
   );
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const posts = await loadScams();
   return {
     props: {
