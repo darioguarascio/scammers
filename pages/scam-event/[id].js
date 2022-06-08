@@ -105,7 +105,7 @@ export async function getStaticProps(contex) {
 
   return {
     props: {
-      event: typeof event.data !== "undefined" && event.data[0],
+      event: typeof event.data !== "undefined" && event.data,
     },
   };
 }
@@ -114,7 +114,7 @@ export async function getStaticPaths() {
   const data = await loadEvents();
   const paths =
     typeof data.data &&
-    data.data.events.map((event) => {
+    data.data.map((event) => {
       return {
         params: {
           id: `${event.id}`,

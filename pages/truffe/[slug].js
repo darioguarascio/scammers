@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import HttpService from "../../helpers/HttpService";
 import md from "markdown-it";
 import Head from "next/head";
 import ScamAction from "../../actions/ScamAction";
@@ -96,7 +95,7 @@ export async function getStaticProps(contex) {
 
   return {
     props: {
-      post: typeof post.data && post.data[0],
+      post: typeof post.data && post.data,
     },
   };
 }
@@ -105,7 +104,7 @@ export async function getStaticPaths() {
   const data = await loadScams();
   const paths =
     typeof data.data &&
-    data.data.scams.map((post) => {
+    data.data.map((post) => {
       return {
         params: {
           slug: `${post.slug}`,
