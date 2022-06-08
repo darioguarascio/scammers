@@ -99,8 +99,8 @@ export async function loadEvent(id) {
   return new EventAction().getOne(id);
 }
 
-export async function getStaticProps(contex) {
-  const { params } = contex;
+export async function getServerSideProps(context) {
+  const { params } = context;
   const event = await loadEvent(params.id);
 
   return {
@@ -110,20 +110,20 @@ export async function getStaticProps(contex) {
   };
 }
 
-export async function getStaticPaths() {
-  const data = await loadEvents();
-  const paths =
-    typeof data.data &&
-    data.data.events.map((event) => {
-      return {
-        params: {
-          id: `${event.id}`,
-        },
-      };
-    });
+// export async function getStaticPaths() {
+//   const data = await loadEvents();
+//   const paths =
+//     typeof data.data &&
+//     data.data.events.map((event) => {
+//       return {
+//         params: {
+//           id: `${event.id}`,
+//         },
+//       };
+//     });
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
