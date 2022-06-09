@@ -1,5 +1,6 @@
-import it from "date-fns/locale/it";
 import formatDistanceStrict from "date-fns/formatDistanceStrict";
+import enLocale from "date-fns/locale/en-US";
+import itLocale from "date-fns/locale/it";
 
 export const getFormattedDateTime = (time, currLang, options) => {
   const formatter = new Intl.DateTimeFormat(currLang, {
@@ -14,15 +15,18 @@ export const getFormattedDateTime = (time, currLang, options) => {
 };
 
 export const getTimeDifference = (firstTime, secondTime, currLang) => {
-  const locale = currLang === "it" ? it : undefined;
-
   const formattedTime = formatDistanceStrict(
     new Date(firstTime),
     new Date(secondTime),
     {
-      locale,
+      locale: dateTimeLocales[currLang],
     }
   );
 
   return formattedTime;
+};
+
+const dateTimeLocales = {
+  en: enLocale,
+  it: itLocale,
 };
