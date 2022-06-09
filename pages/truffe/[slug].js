@@ -1,7 +1,6 @@
-import { useRouter } from "next/router";
-import md from "markdown-it";
 import Head from "next/head";
 import ScamAction from "../../actions/ScamAction";
+import Markdown from "react-markdown";
 
 function Scam({ post }) {
   return (
@@ -62,11 +61,7 @@ function Scam({ post }) {
                   </h1>
                   <div className="text-gray-600 text-base font-normal">
                     <article className="prose">
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: md().render(post.description),
-                        }}
-                      />
+                      <Markdown>{post.description}</Markdown>
                     </article>
                   </div>
                 </div>
