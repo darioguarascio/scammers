@@ -1,9 +1,44 @@
+import formatDistanceStrict from "date-fns/formatDistanceStrict";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import EventAction from "../../actions/EventAction";
 import RelatedScam from "../../components/ScamEvent/RelatedScam";
 import RelatedScammer from "../../components/ScamEvent/RelatedScammer";
 import RelatedVictim from "../../components/ScamEvent/RelatedVictim";
+import it from "date-fns/locale/it";
 
 const ScamEvent = ({ event }) => {
+  const { t, i18n } = useTranslation("common");
+
+  const getFormattedDateTime = (time) => {
+    const currentLanguage = i18n.language;
+
+    const formatter = new Intl.DateTimeFormat(currentLanguage, {
+      dateStyle: "medium",
+      timeStyle: "medium",
+    });
+
+    const formattedDateTime = formatter.format(new Date(time));
+
+    return formattedDateTime;
+  };
+
+  const getTimeDifference = (firstTime, secondTime) => {
+    const currentLanguage = i18n.language;
+
+    const locale = currentLanguage === "it" ? it : undefined;
+
+    const formattedTime = formatDistanceStrict(
+      new Date(firstTime),
+      new Date(secondTime),
+      {
+        locale,
+      }
+    );
+
+    return formattedTime;
+  };
+
   return (
     <div>
       {event && (
@@ -30,7 +65,7 @@ const ScamEvent = ({ event }) => {
               <div className="text-gray-700 mt-3 text-sm font-normal">
                 <ul className="border-l border-gray-300">
                   {event.timeline &&
-                    event.timeline.map((item) => (
+                    event.timeline.map((item, index) => (
                       <li key={item.time} className="pl-4 mb-3">
                         <div className="border rounded-md">
                           <div className="flex flex-start items-center pt-3 relative">
@@ -51,7 +86,14 @@ const ScamEvent = ({ event }) => {
                               </div>
                             </div>
                             <p className="text-blue-600 pl-4 text-sm mb-2 font-medium">
-                              {item.time}
+                              {getFormattedDateTime(item.time)}{" "}
+                              {index !== 0 &&
+                                `(${t(
+                                  "time.relativeTimePrefix"
+                                )} ${getTimeDifference(
+                                  event.timeline[index - 1].time,
+                                  item.time
+                                )})`}
                             </p>
                           </div>
                           <div className="mt-0.5 ml-4 mb-6">
@@ -107,6 +149,7 @@ export async function getServerSideProps(context) {
     notFound: typeof event.data === "undefined",
     props: {
       event: typeof event.data !== "undefined" && event.data,
+      ...(await serverSideTranslations(context.locale, ["common"])),
     },
   };
 }

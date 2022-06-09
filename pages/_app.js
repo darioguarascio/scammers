@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Navigation from "../components/Navigation";
 import "../styles/globals.css";
 import { useState } from "react";
+import { appWithTranslation } from "next-i18next";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -71,4 +72,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
