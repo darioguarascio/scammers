@@ -1,43 +1,14 @@
-import formatDistanceStrict from "date-fns/formatDistanceStrict";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import EventAction from "../../actions/EventAction";
 import RelatedScam from "../../components/ScamEvent/RelatedScam";
 import RelatedScammer from "../../components/ScamEvent/RelatedScammer";
 import RelatedVictim from "../../components/ScamEvent/RelatedVictim";
-import it from "date-fns/locale/it";
+import { getDescription } from "../../helpers/markdown";
+import { getFormattedDateTime, getTimeDifference } from "../../helpers/time";
 
 const ScamEvent = ({ event }) => {
   const { t, i18n } = useTranslation("common");
-
-  const getFormattedDateTime = (time) => {
-    const currentLanguage = i18n.language;
-
-    const formatter = new Intl.DateTimeFormat(currentLanguage, {
-      dateStyle: "medium",
-      timeStyle: "medium",
-    });
-
-    const formattedDateTime = formatter.format(new Date(time));
-
-    return formattedDateTime;
-  };
-
-  const getTimeDifference = (firstTime, secondTime) => {
-    const currentLanguage = i18n.language;
-
-    const locale = currentLanguage === "it" ? it : undefined;
-
-    const formattedTime = formatDistanceStrict(
-      new Date(firstTime),
-      new Date(secondTime),
-      {
-        locale,
-      }
-    );
-
-    return formattedTime;
-  };
 
   return (
     <div>
@@ -86,20 +57,21 @@ const ScamEvent = ({ event }) => {
                               </div>
                             </div>
                             <p className="text-blue-600 pl-4 text-sm mb-2 font-medium">
-                              {getFormattedDateTime(item.time)}{" "}
+                              {getFormattedDateTime(item.time, i18n.language)}{" "}
                               {index !== 0 &&
                                 `(${t(
                                   "time.relativeTimePrefix"
                                 )} ${getTimeDifference(
                                   event.timeline[index - 1].time,
-                                  item.time
+                                  item.time,
+                                  i18n.language
                                 )})`}
                             </p>
                           </div>
                           <div className="mt-0.5 ml-4 mb-6">
-                            <p className="text-gray-700 text-xs mb-3">
-                              {item.description}
-                            </p>
+                            <span className="text-gray-700 text-xs mb-3">
+                              {getDescription(item)}
+                            </span>
                           </div>
                         </div>
                       </li>
