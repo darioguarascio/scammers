@@ -36,6 +36,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 --
 
 ##
+
 ### Varnish setup
 
 sample file for `.config/varnish_backends.vcl`
@@ -56,4 +57,13 @@ sub vcl_init {
 sub host_to_backend_hinting {
     set req.backend_hint = be_web.backend();
 }
+```
+
+### Directus Docker initial setup for extension
+
+Exectue before running Directus in Docker the first time
+
+```sh
+cd directus-extensions/jotform
+npm install
 ```
