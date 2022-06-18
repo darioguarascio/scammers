@@ -21,6 +21,7 @@ services:
       - ${DIRECTUS_LISTEN:-8055}:8055
     volumes:
       - data-directus:/directus/uploads
+      - ./directus-extensions/jotform/dist/index.js:/directus/extensions/endpoints/jotform/index.js
     env_file:
       - ${DIRECTUS_ENV_FILE:-.directus.env}
     environment:
@@ -40,7 +41,7 @@ services:
       CACHE_STORE: redis
       CACHE_REDIS: redis://scammers.redis:6379/2
       CACHE_NAMESPACE: i18n
-
+    command: sh -c "npm i multer && npx directus bootstrap && npx directus start"
 
   postgresql:
     image: postgis/postgis
@@ -56,7 +57,6 @@ services:
       POSTGRES_DB:
       POSTGRES_USER:
       POSTGRES_HOST_AUTH_METHOD: ${POSTGRES_HOST_AUTH_METHOD:-trust}
-
 
   node:
     container_name: scammers.node
@@ -101,4 +101,3 @@ services:
     #     syslog-address: udp://${VARNISH_LOGGER_IP:-127.0.0.1}:${VARNISH_LOGGER_PORT:-5445}
     #     # syslog-format: "rfc3164"
     #     # tag: "node-red"
-
