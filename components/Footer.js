@@ -23,7 +23,7 @@ const Footer = () => {
             <div className="w-full sm:w-2/3 lg:w-3/12 px-4">
               <div className="w-full mb-10">
                 <strong className="text-xl font-bolder text-white mb-6 block">
-                  Truffatori.info
+                  Truffe.info
                 </strong>
 
                 <p className="text-base text-body-color mb-7">

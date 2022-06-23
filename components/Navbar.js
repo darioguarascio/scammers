@@ -16,7 +16,7 @@ const Navbar = (props) => {
         <nav className="flex items-center justify-between py-6">
           <Link href="/">
             <a className="text-2xl font-bolder tracking-wide leading-none text-blue-600">
-              Truffatori.info
+              Truffe.info
             </a>
           </Link>
           {/*
